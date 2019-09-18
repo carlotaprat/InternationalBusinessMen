@@ -70,11 +70,13 @@ struct TradesViewModel {
         
         if let existingSale = sales.first(where: {$0.sku == newTransaction.sku}) {
             
+            existingSale.transactions.append(newTransaction)
             existingSale.amount += newTransaction.amount * conversion
             
         } else {
             
             let sale = Sale(sku: newTransaction.sku, amount: newTransaction.amount * conversion)
+            sale.transactions.append(newTransaction)
             sales.append(sale)
             
         }

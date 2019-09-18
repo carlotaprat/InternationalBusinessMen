@@ -9,13 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BeMobile/View Controllers/TradesViewModel.swift"
-            timestampString = "590517518.941201"
+            filePath = "BeMobile/View Controllers/TradesViewController.swift"
+            timestampString = "590523119.824659"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "calc(directRates:indirectRates:)"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "donePicker()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,28 +26,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BeMobile/View Controllers/TradesViewController.swift"
-            timestampString = "590517518.941779"
+            timestampString = "590523119.828776"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "loadProducts()"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "donePicker()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BeMobile/View Controllers/TradesViewController.swift"
-            timestampString = "590517518.942673"
+            timestampString = "590523119.8298219"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "loadProducts()"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
+            landmarkName = "cancelPicker()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BeMobile/View Controllers/TradesViewController.swift"
+            timestampString = "590523119.830694"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "cancelPicker()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

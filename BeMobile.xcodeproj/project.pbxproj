@@ -19,6 +19,8 @@
 		056E53A6233258FD00CD122F /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056E53A4233258FD00CD122F /* RxSwift.framework */; };
 		056E53A7233258FD00CD122F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056E53A5233258FD00CD122F /* Alamofire.framework */; };
 		056E53AA2332599700CD122F /* Sale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056E53A92332599700CD122F /* Sale.swift */; };
+		056E53AD23329BD000CD122F /* TextViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056E53AC23329BD000CD122F /* TextViewExtension.swift */; };
+		056E53B02332A8AC00CD122F /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056E53AF2332A8AC00CD122F /* TransactionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		056E53A4233258FD00CD122F /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		056E53A5233258FD00CD122F /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		056E53A92332599700CD122F /* Sale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sale.swift; sourceTree = "<group>"; };
+		056E53AC23329BD000CD122F /* TextViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewExtension.swift; sourceTree = "<group>"; };
+		056E53AF2332A8AC00CD122F /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,7 @@
 		056E53832332440B00CD122F /* BeMobile */ = {
 			isa = PBXGroup;
 			children = (
+				056E53AB23329BBA00CD122F /* Extensions */,
 				056E53902332440D00CD122F /* Info.plist */,
 				056E53882332440B00CD122F /* Main.storyboard */,
 				056E538D2332440D00CD122F /* LaunchScreen.storyboard */,
@@ -94,6 +99,7 @@
 		056E53972332453900CD122F /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				056E53AE2332A89A00CD122F /* Cell */,
 				056E53862332440B00CD122F /* TradesViewController.swift */,
 				056E53A12332556600CD122F /* TradesViewModel.swift */,
 			);
@@ -133,6 +139,22 @@
 				056E53A4233258FD00CD122F /* RxSwift.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		056E53AB23329BBA00CD122F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				056E53AC23329BD000CD122F /* TextViewExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		056E53AE2332A89A00CD122F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				056E53AF2332A8AC00CD122F /* TransactionCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,8 +256,10 @@
 				056E539E23324E0900CD122F /* Transaction.swift in Sources */,
 				056E53A023324E6400CD122F /* Rate.swift in Sources */,
 				056E53AA2332599700CD122F /* Sale.swift in Sources */,
+				056E53B02332A8AC00CD122F /* TransactionCell.swift in Sources */,
 				056E53852332440B00CD122F /* AppDelegate.swift in Sources */,
 				056E53A22332556600CD122F /* TradesViewModel.swift in Sources */,
+				056E53AD23329BD000CD122F /* TextViewExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
