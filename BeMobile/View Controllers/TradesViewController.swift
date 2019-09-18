@@ -11,11 +11,12 @@ import RxSwift
 
 class TradesViewController: UIViewController {
 
+    @IBOutlet weak var saleView: UIView!
     @IBOutlet weak var textField: UITextField!
-    // @IBOutlet weak var productPicker: UIPickerView!
     @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var productLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var bottomView: UIView!
     
     let productPicker = UIPickerView()
     
@@ -30,23 +31,27 @@ class TradesViewController: UIViewController {
     var pickerData: [String] = ["Loading"]
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
+        setupView()
+        loadRates()
+    }
+
+    func setupView() {
         
         self.productPicker.delegate = self
         self.productPicker.dataSource = self
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        //tableView.register(TransactionCell.self, forCellReuseIdentifier: "TransactionCell")
-
-        setupPicker()
-
-        textField.inputView = productPicker
-        //loadProducts()
         
-        loadRates()
+        setupPicker()
+        textField.inputView = productPicker
+        
+        bottomView.setupBottom()
+        
     }
-
     
     func loadProducts() {
         
@@ -100,7 +105,6 @@ class TradesViewController: UIViewController {
         let toolBar = UIToolbar()
         toolBar.barStyle = UIBarStyle.default
         toolBar.isTranslucent = true
-        // toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
         toolBar.sizeToFit()
         
         let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: self, action: #selector(self.donePicker))
@@ -129,6 +133,8 @@ class TradesViewController: UIViewController {
         self.selectedSale = selectedSale
         
         tableView.reloadData()
+        self.saleView.alpha = 1
+
         
     }
     
