@@ -6,16 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BeMobile/View Controllers/TradesViewController.swift"
-            timestampString = "590504732.018842"
+            filePath = "BeMobile/View Controllers/TradesViewModel.swift"
+            timestampString = "590514249.080321"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "loadProducts()"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "calc(directRates:indirectRates:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -20,6 +20,12 @@ class Rate: Decodable {
         case rate
     }
     
+    init(from: String, to: String, rate: Double) {
+        self.from = from
+        self.to = to
+        self.rate = rate
+    }
+    
     required init(from decoder: Decoder) throws {
         
         let container = try decoder.container(keyedBy: RateCodingKeys.self)

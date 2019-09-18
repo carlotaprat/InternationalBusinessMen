@@ -28,8 +28,11 @@ class TradesViewController: UIViewController {
         self.productPicker.delegate = self
         self.productPicker.dataSource = self
         
-        loadProducts()
+        //loadProducts()
+        
+        loadRates()
     }
+
     
     func loadProducts() {
         
@@ -55,13 +58,12 @@ class TradesViewController: UIViewController {
     
     func loadRates() {
         
-        /*let rates = viewModel.getRates()
+        let rates = viewModel.getRates()
         
         rates.subscribe(onNext: { (rate) in
             
-            myRates.append(rate)
-            
-            // FER ALGO AMB INTERFAÇ, o guardarme el producte...
+            self.myRates.append(rate)
+            //self.viewModel.addRate(rate: rate)
             
         }, onError: { (error) in
             
@@ -69,9 +71,15 @@ class TradesViewController: UIViewController {
             
         }, onCompleted: {
             
-            loadPicker()
+            // CRIDAR
+            self.viewModel.calculateRates(rates: self.myRates)
+           // self.viewModel.calc(directRates: &<#T##[Rate]#>, indirectRates: &<#T##[Rate]#>)
+            //self.viewModel.calculateRates(rates: self.myRates)
+            print(self.myRates)
             
-        }).disposed(by: disposeBag)*/
+        }).disposed(by: disposeBag)
+        
+
         
     }
     
