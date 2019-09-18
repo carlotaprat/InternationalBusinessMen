@@ -8,20 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		056E53852332440B00CD122F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056E53842332440B00CD122F /* AppDelegate.swift */; };
-		056E53872332440B00CD122F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056E53862332440B00CD122F /* ViewController.swift */; };
+		056E53872332440B00CD122F /* TradesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056E53862332440B00CD122F /* TradesViewController.swift */; };
 		056E538A2332440B00CD122F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 056E53882332440B00CD122F /* Main.storyboard */; };
 		056E538C2332440D00CD122F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 056E538B2332440D00CD122F /* Assets.xcassets */; };
 		056E538F2332440D00CD122F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 056E538D2332440D00CD122F /* LaunchScreen.storyboard */; };
+		056E539C23324D3D00CD122F /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056E539B23324D3D00CD122F /* APIService.swift */; };
+		056E539E23324E0900CD122F /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056E539D23324E0900CD122F /* Transaction.swift */; };
+		056E53A023324E6400CD122F /* Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056E539F23324E6400CD122F /* Rate.swift */; };
+		056E53A22332556600CD122F /* TradesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056E53A12332556600CD122F /* TradesViewModel.swift */; };
+		056E53A6233258FD00CD122F /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056E53A4233258FD00CD122F /* RxSwift.framework */; };
+		056E53A7233258FD00CD122F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056E53A5233258FD00CD122F /* Alamofire.framework */; };
+		056E53AA2332599700CD122F /* Sale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056E53A92332599700CD122F /* Sale.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		056E53812332440B00CD122F /* BeMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		056E53842332440B00CD122F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		056E53862332440B00CD122F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		056E53862332440B00CD122F /* TradesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradesViewController.swift; sourceTree = "<group>"; };
 		056E53892332440B00CD122F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		056E538B2332440D00CD122F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		056E538E2332440D00CD122F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		056E53902332440D00CD122F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		056E539B23324D3D00CD122F /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		056E539D23324E0900CD122F /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		056E539F23324E6400CD122F /* Rate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rate.swift; sourceTree = "<group>"; };
+		056E53A12332556600CD122F /* TradesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradesViewModel.swift; sourceTree = "<group>"; };
+		056E53A4233258FD00CD122F /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		056E53A5233258FD00CD122F /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		056E53A92332599700CD122F /* Sale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sale.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +43,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				056E53A6233258FD00CD122F /* RxSwift.framework in Frameworks */,
+				056E53A7233258FD00CD122F /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +56,7 @@
 			children = (
 				056E53832332440B00CD122F /* BeMobile */,
 				056E53822332440B00CD122F /* Products */,
+				056E53A3233258FD00CD122F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +71,68 @@
 		056E53832332440B00CD122F /* BeMobile */ = {
 			isa = PBXGroup;
 			children = (
-				056E53842332440B00CD122F /* AppDelegate.swift */,
-				056E53862332440B00CD122F /* ViewController.swift */,
-				056E53882332440B00CD122F /* Main.storyboard */,
-				056E538B2332440D00CD122F /* Assets.xcassets */,
-				056E538D2332440D00CD122F /* LaunchScreen.storyboard */,
 				056E53902332440D00CD122F /* Info.plist */,
+				056E53882332440B00CD122F /* Main.storyboard */,
+				056E538D2332440D00CD122F /* LaunchScreen.storyboard */,
+				056E539A2332456000CD122F /* Supporting Files */,
+				056E53992332454B00CD122F /* Storyboards */,
+				056E53982332454300CD122F /* Models */,
+				056E53972332453900CD122F /* View Controllers */,
+				056E53962332452500CD122F /* Service */,
 			);
 			path = BeMobile;
+			sourceTree = "<group>";
+		};
+		056E53962332452500CD122F /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				056E539B23324D3D00CD122F /* APIService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		056E53972332453900CD122F /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				056E53862332440B00CD122F /* TradesViewController.swift */,
+				056E53A12332556600CD122F /* TradesViewModel.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		056E53982332454300CD122F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				056E539D23324E0900CD122F /* Transaction.swift */,
+				056E53A92332599700CD122F /* Sale.swift */,
+				056E539F23324E6400CD122F /* Rate.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		056E53992332454B00CD122F /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		056E539A2332456000CD122F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				056E53842332440B00CD122F /* AppDelegate.swift */,
+				056E538B2332440D00CD122F /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		056E53A3233258FD00CD122F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				056E53A5233258FD00CD122F /* Alamofire.framework */,
+				056E53A4233258FD00CD122F /* RxSwift.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +145,7 @@
 				056E537D2332440A00CD122F /* Sources */,
 				056E537E2332440A00CD122F /* Frameworks */,
 				056E537F2332440A00CD122F /* Resources */,
+				056E53A82332592500CD122F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -130,13 +202,40 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		056E53A82332592500CD122F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		056E537D2332440A00CD122F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				056E53872332440B00CD122F /* ViewController.swift in Sources */,
+				056E53872332440B00CD122F /* TradesViewController.swift in Sources */,
+				056E539C23324D3D00CD122F /* APIService.swift in Sources */,
+				056E539E23324E0900CD122F /* Transaction.swift in Sources */,
+				056E53A023324E6400CD122F /* Rate.swift in Sources */,
+				056E53AA2332599700CD122F /* Sale.swift in Sources */,
 				056E53852332440B00CD122F /* AppDelegate.swift in Sources */,
+				056E53A22332556600CD122F /* TradesViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +383,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QA3TFFQB92;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = BeMobile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -302,6 +405,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QA3TFFQB92;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = BeMobile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
