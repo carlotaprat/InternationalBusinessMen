@@ -10,8 +10,13 @@ import Foundation
 
 class Sale {
     
-    var name: String = ""
+    var sku: String = ""
     var amount: Double = 0
+    var transactions: [Transaction] = []
     
+    init(sku: String, amount: Double) {
+        self.sku = sku
+        self.amount = amount
+    }
     
 }

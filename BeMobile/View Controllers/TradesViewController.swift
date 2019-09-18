@@ -17,10 +17,10 @@ class TradesViewController: UIViewController {
     var disposeBag = DisposeBag()
     var viewModel = TradesViewModel()
     
-    var myTransactions: [Transaction] = []
+    var mySales: [Sale] = []
     var myRates: [Rate] = []
     
-    var pickerData: [String] = []
+    var pickerData: [String] = ["Loading"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,17 +40,19 @@ class TradesViewController: UIViewController {
         
         transactions.subscribe(onNext: { (transaction) in
             
-            self.myTransactions.append(transaction)
-            
-            // FER ALGO AMB INTERFAÇ, o guardarme el producte...
+            self.mySales = self.viewModel.newSale(sales: &self.mySales, newTransaction: transaction, rates: self.myRates)
+            print("coucou")
             
         }, onError: { (error) in
-            
+
             print(error)
  
         }, onCompleted: {
             
-            // CRIDAR
+            //selfloadPicker()
+            
+            self.productPicker.reloadAllComponents()
+            print(self.mySales)
             
         }).disposed(by: disposeBag)
         
@@ -63,7 +65,6 @@ class TradesViewController: UIViewController {
         rates.subscribe(onNext: { (rate) in
             
             self.myRates.append(rate)
-            //self.viewModel.addRate(rate: rate)
             
         }, onError: { (error) in
             
@@ -71,11 +72,8 @@ class TradesViewController: UIViewController {
             
         }, onCompleted: {
             
-            // CRIDAR
-            self.viewModel.calculateRates(rates: self.myRates)
-           // self.viewModel.calc(directRates: &<#T##[Rate]#>, indirectRates: &<#T##[Rate]#>)
-            //self.viewModel.calculateRates(rates: self.myRates)
-            print(self.myRates)
+            self.myRates = self.viewModel.calculateRates(rates: self.myRates)
+            self.loadProducts()
             
         }).disposed(by: disposeBag)
         
@@ -85,9 +83,7 @@ class TradesViewController: UIViewController {
     
     func loadPicker() {
         
-        var sales = viewModel.calculateTrades(transactions: myTransactions, rates: myRates)
-        
-        //pickerData.map{sales.name}
+        // self.productPicker.dataSource = self.mySales.map({$0.sku})
 
     }
 
@@ -99,8 +95,20 @@ extension TradesViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 1
+        if self.mySales.isEmpty {
+            return 1
+        } else {
+            return self.mySales.count
+        }
     }
     
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        if self.mySales.isEmpty {
+            return "Loading"
+        } else {
+            return self.mySales[row].sku ?? ""
+        }
+    }
     
 }

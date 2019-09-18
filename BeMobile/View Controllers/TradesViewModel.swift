@@ -25,13 +25,14 @@ struct TradesViewModel {
         
     }
     
-    func calculateRates(rates: [Rate]) {
+    func calculateRates(rates: [Rate]) -> [Rate] {
         
         var directRates = rates.filter{$0.to == euro}
         var indirectRates = rates.filter{$0.to != euro && $0.from != euro}
-        calc(directRates: &directRates, indirectRates: &indirectRates)
+        return calc(directRates: &directRates, indirectRates: &indirectRates)
 
     }
+    
     func calc(directRates: inout [Rate], indirectRates: inout [Rate]) -> [Rate] {
         
         if indirectRates.isEmpty {
@@ -59,6 +60,48 @@ struct TradesViewModel {
         }
         
     }
+    func newSale(sales: inout [Sale], newTransaction: Transaction, rates: [Rate]) -> [Sale] {
+        
+        var conversion: Double = 1.0
+        
+        if newTransaction.currency != euro {
+            conversion = rates.first(where: {$0.from == newTransaction.currency})?.rate ?? 0
+        }
+        
+        if let existingSale = sales.first(where: {$0.sku == newTransaction.sku}) {
+            
+            existingSale.amount += newTransaction.amount * conversion
+            
+        } else {
+            
+            let sale = Sale(sku: newTransaction.sku, amount: newTransaction.amount * conversion)
+            sales.append(sale)
+            
+        }
+        
+        return sales
+    }
+
+    /*func newTransaction(transactions: inout [Transaction], newTransaction: Transaction, rates: [Rate]) -> [Transaction] {
+        
+        var conversion: Double = 1.0
+        
+        if newTransaction.currency != euro {
+            conversion = rates.first(where: {$0.from == newTransaction.currency})?.rate ?? 0
+        }
+        
+        if let existingTransaction = transactions.first(where: {$0.sku == newTransaction.sku}) {
+            
+            existingTransaction.amount += newTransaction.amount * conversion
+            
+        } else {
+            
+            newTransaction.
+            transactions.append(<#T##newElement: Transaction##Transaction#>)
+            
+        }
+        
+    }*/
     
     func calculateTrades(transactions: [Transaction], rates: [Rate]) -> [Sale] {
         
