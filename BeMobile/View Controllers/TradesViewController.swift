@@ -17,6 +17,7 @@ class TradesViewController: UIViewController {
     @IBOutlet weak var productLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var bottomView: UIView!
+    @IBOutlet weak var headerView: UIView!
     
     let productPicker = UIPickerView()
     
@@ -36,6 +37,7 @@ class TradesViewController: UIViewController {
         
         setupView()
         loadRates()
+        
     }
 
     func setupView() {
@@ -49,18 +51,18 @@ class TradesViewController: UIViewController {
         setupPicker()
         textField.inputView = productPicker
         
+        // headerView.setupHeader()
         bottomView.setupBottom()
         
     }
     
-    func loadProducts() {
+    func loadTransactions() {
         
         let transactions = viewModel.getTransactions()
         
         transactions.subscribe(onNext: { (transaction) in
             
             self.mySales = self.viewModel.newSale(sales: &self.mySales, newTransaction: transaction, rates: self.myRates)
-            print("coucou")
             
         }, onError: { (error) in
 
@@ -73,7 +75,6 @@ class TradesViewController: UIViewController {
             })
             
             self.productPicker.reloadAllComponents()
-            print(self.mySales)
             
         }).disposed(by: disposeBag)
         
@@ -94,7 +95,7 @@ class TradesViewController: UIViewController {
         }, onCompleted: {
             
             self.myRates = self.viewModel.calculateRates(rates: self.myRates)
-            self.loadProducts()
+            self.loadTransactions()
             
         }).disposed(by: disposeBag)
         
@@ -128,7 +129,21 @@ class TradesViewController: UIViewController {
         }
         
         productLabel.text = selectedSale.sku
-        amountLabel.text = String(selectedSale.amount)
+        let currencyFormatter = NumberFormatter()
+        currencyFormatter.usesGroupingSeparator = true
+        currencyFormatter.numberStyle = .currency
+        currencyFormatter.locale = Locale(identifier: "es_ES")
+        
+        //let nsn = NSNumber(selectedSale.amount)
+        
+        if let priceString = currencyFormatter.string(from: selectedSale.amount as NSNumber) {
+            amountLabel.text = priceString
+
+        } else {
+            amountLabel.text = String(selectedSale.amount)
+            
+        }
+        
         
         self.selectedSale = selectedSale
         
@@ -190,7 +205,7 @@ extension TradesViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell.setupCell(transaction: ss.transactions[indexPath.row])
+        cell.setupCell(transaction: ss.transactions[indexPath.row], eurTransaction: ss.eurTransactions[indexPath.row])
         
         return cell
         

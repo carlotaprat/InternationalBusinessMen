@@ -13,6 +13,7 @@ class Sale {
     var sku: String = ""
     var amount: Double = 0
     var transactions: [Transaction] = []
+    var eurTransactions: [Transaction] = []
     
     init(sku: String, amount: Double) {
         self.sku = sku

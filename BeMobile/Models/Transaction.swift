@@ -20,6 +20,12 @@ class Transaction: Decodable {
         case currency
     }
     
+    init(sku: String, amount: Double, currency: String) {
+        self.sku = sku
+        self.amount = amount
+        self.currency = currency
+    }
+    
     required init(from decoder: Decoder) throws {
         
         let container = try decoder.container(keyedBy: TransactionCodingKeys.self)

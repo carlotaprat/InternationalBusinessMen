@@ -11,23 +11,21 @@ import UIKit
 class TransactionCell: UITableViewCell {
 
     @IBOutlet weak var currencyLabel: UILabel!
-    
+    @IBOutlet weak var eurCurrencyLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
+    @IBOutlet weak var eurAmountLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
-    func setupCell(transaction: Transaction) {
+    func setupCell(transaction: Transaction, eurTransaction: Transaction) {
         
-        currencyLabel.text = String(transaction.amount)
-        amountLabel.text = transaction.currency
+        amountLabel.text = String(transaction.amount)
+        currencyLabel.text = transaction.currency
+                
+        eurAmountLabel.text = String(eurTransaction.amount)
+        eurCurrencyLabel.text = String(eurTransaction.currency)
         
     }
 

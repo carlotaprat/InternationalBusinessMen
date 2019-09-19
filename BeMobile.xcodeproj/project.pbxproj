@@ -19,8 +19,9 @@
 		056E53A6233258FD00CD122F /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056E53A4233258FD00CD122F /* RxSwift.framework */; };
 		056E53A7233258FD00CD122F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056E53A5233258FD00CD122F /* Alamofire.framework */; };
 		056E53AA2332599700CD122F /* Sale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056E53A92332599700CD122F /* Sale.swift */; };
-		056E53AD23329BD000CD122F /* TextViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056E53AC23329BD000CD122F /* TextViewExtension.swift */; };
+		056E53AD23329BD000CD122F /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056E53AC23329BD000CD122F /* UIViewExtension.swift */; };
 		056E53B02332A8AC00CD122F /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056E53AF2332A8AC00CD122F /* TransactionCell.swift */; };
+		05BC53062333E11A00C2F984 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BC53052333E11A00C2F984 /* DoubleExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,8 +39,9 @@
 		056E53A4233258FD00CD122F /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		056E53A5233258FD00CD122F /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		056E53A92332599700CD122F /* Sale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sale.swift; sourceTree = "<group>"; };
-		056E53AC23329BD000CD122F /* TextViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewExtension.swift; sourceTree = "<group>"; };
+		056E53AC23329BD000CD122F /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		056E53AF2332A8AC00CD122F /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
+		05BC53052333E11A00C2F984 /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,7 +146,8 @@
 		056E53AB23329BBA00CD122F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				056E53AC23329BD000CD122F /* TextViewExtension.swift */,
+				056E53AC23329BD000CD122F /* UIViewExtension.swift */,
+				05BC53052333E11A00C2F984 /* DoubleExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05BC53062333E11A00C2F984 /* DoubleExtension.swift in Sources */,
 				056E53872332440B00CD122F /* TradesViewController.swift in Sources */,
 				056E539C23324D3D00CD122F /* APIService.swift in Sources */,
 				056E539E23324E0900CD122F /* Transaction.swift in Sources */,
@@ -259,7 +263,7 @@
 				056E53B02332A8AC00CD122F /* TransactionCell.swift in Sources */,
 				056E53852332440B00CD122F /* AppDelegate.swift in Sources */,
 				056E53A22332556600CD122F /* TradesViewModel.swift in Sources */,
-				056E53AD23329BD000CD122F /* TextViewExtension.swift in Sources */,
+				056E53AD23329BD000CD122F /* UIViewExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
