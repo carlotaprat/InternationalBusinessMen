@@ -17,7 +17,7 @@ class TradesViewController: UIViewController {
     @IBOutlet weak var productLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var bottomView: UIView!
-    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var previousView: UIView!
     
     let productPicker = UIPickerView()
     
@@ -51,7 +51,6 @@ class TradesViewController: UIViewController {
         setupPicker()
         textField.inputView = productPicker
         
-        // headerView.setupHeader()
         bottomView.setupBottom()
         
     }
@@ -59,14 +58,15 @@ class TradesViewController: UIViewController {
     func loadTransactions() {
         
         let transactions = viewModel.getTransactions()
-        
+        // self.present(UIAlertController.genericError(), animated: true)
+
         transactions.subscribe(onNext: { (transaction) in
             
             self.mySales = self.viewModel.newSale(sales: &self.mySales, newTransaction: transaction, rates: self.myRates)
             
         }, onError: { (error) in
 
-            print(error)
+            self.present(UIAlertController.genericError(), animated: true)
  
         }, onCompleted: {
             
@@ -90,8 +90,8 @@ class TradesViewController: UIViewController {
             
         }, onError: { (error) in
             
-            print(error)
-            
+            self.present(UIAlertController.genericError(), animated: true)
+
         }, onCompleted: {
             
             self.myRates = self.viewModel.calculateRates(rates: self.myRates)
@@ -111,6 +111,9 @@ class TradesViewController: UIViewController {
         let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: self, action: #selector(self.donePicker))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
         let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItem.Style.plain, target: self, action: #selector(self.cancelPicker))
+        
+        doneButton.tintColor = UIColor.DeepPurple
+        cancelButton.tintColor = UIColor.DeepPurple
         
         toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
         toolBar.isUserInteractionEnabled = true
@@ -134,8 +137,6 @@ class TradesViewController: UIViewController {
         currencyFormatter.numberStyle = .currency
         currencyFormatter.locale = Locale(identifier: "es_ES")
         
-        //let nsn = NSNumber(selectedSale.amount)
-        
         if let priceString = currencyFormatter.string(from: selectedSale.amount as NSNumber) {
             amountLabel.text = priceString
 
@@ -144,11 +145,11 @@ class TradesViewController: UIViewController {
             
         }
         
-        
         self.selectedSale = selectedSale
         
         tableView.reloadData()
         self.saleView.alpha = 1
+        self.previousView.alpha = 0
 
         
     }

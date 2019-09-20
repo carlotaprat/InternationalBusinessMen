@@ -11,7 +11,7 @@ import RxSwift
 
 struct TradesViewModel {
     
-    let euro = "EUR"
+    let euro = NSLocalizedString("euro", comment: "")
     
     func getTransactions() -> Observable<Transaction> {
         
@@ -61,6 +61,7 @@ struct TradesViewModel {
         }
         
     }
+    
     func newSale(sales: inout [Sale], newTransaction: Transaction, rates: [Rate]) -> [Sale] {
         
         var conversion: Double = 1.0
@@ -80,7 +81,6 @@ struct TradesViewModel {
             existingSale.eurTransactions.append(eurTransaction)
 
             existingSale.amount = round(((newTransaction.amount * conversion).bankersRounding() + existingSale.amount) * 100)/100
-            print(existingSale.amount)
             
         } else {
             

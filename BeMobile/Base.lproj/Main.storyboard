@@ -48,7 +48,25 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1wU-A6-Fef">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iqA-py-pRK">
+                                        <rect key="frame" x="0.0" y="80" width="375" height="497"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find all the products GNB is trading with and the information related" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZmK-r3-nlP">
+                                                <rect key="frame" x="20" y="202" width="335" height="93.5"/>
+                                                <fontDescription key="fontDescription" type="italicSystem" pointSize="26"/>
+                                                <color key="textColor" red="0.33531787239999999" green="0.30554952749999997" blue="0.40681670980000001" alpha="0.29910321306197185" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="ZmK-r3-nlP" firstAttribute="leading" secondItem="iqA-py-pRK" secondAttribute="leading" constant="20" id="8BZ-T5-o6l"/>
+                                            <constraint firstAttribute="trailing" secondItem="ZmK-r3-nlP" secondAttribute="trailing" constant="20" id="UTU-1W-PoY"/>
+                                            <constraint firstItem="ZmK-r3-nlP" firstAttribute="centerY" secondItem="iqA-py-pRK" secondAttribute="centerY" id="XH0-xt-ueG"/>
+                                            <constraint firstItem="ZmK-r3-nlP" firstAttribute="centerX" secondItem="iqA-py-pRK" secondAttribute="centerX" id="ej0-8n-rFL"/>
+                                        </constraints>
+                                    </view>
+                                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1wU-A6-Fef">
                                         <rect key="frame" x="0.0" y="80" width="375" height="497"/>
                                         <subviews>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eli-t8-bki">
@@ -125,7 +143,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" red="0.22716343219999999" green="0.085481234059999994" blue="0.56482755829999998" alpha="0.11042033450704225" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.777913142936147" green="0.76506420174365686" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="Trx-7M-Y7T" firstAttribute="centerY" secondItem="G2V-2J-2bS" secondAttribute="centerY" id="3tN-Xy-R9y"/>
                                                     <constraint firstAttribute="height" constant="75" id="Dfr-Ot-ptV"/>
@@ -176,12 +194,16 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="1wU-A6-Fef" secondAttribute="bottom" id="BzZ-vj-Yue"/>
+                                    <constraint firstAttribute="trailing" secondItem="iqA-py-pRK" secondAttribute="trailing" id="CMG-Ig-Im7"/>
+                                    <constraint firstItem="iqA-py-pRK" firstAttribute="leading" secondItem="Cru-q3-hhO" secondAttribute="leading" id="Cb7-cr-byZ"/>
                                     <constraint firstItem="1wU-A6-Fef" firstAttribute="leading" secondItem="Cru-q3-hhO" secondAttribute="leading" id="Llo-OB-G1d"/>
                                     <constraint firstItem="gcK-0u-Njp" firstAttribute="leading" secondItem="Cru-q3-hhO" secondAttribute="leading" constant="20" id="Slg-6b-PSy"/>
+                                    <constraint firstAttribute="bottom" secondItem="iqA-py-pRK" secondAttribute="bottom" id="aQq-Jl-TCH"/>
                                     <constraint firstItem="1wU-A6-Fef" firstAttribute="top" secondItem="gcK-0u-Njp" secondAttribute="bottom" constant="10" id="eJ5-fU-EaO"/>
                                     <constraint firstAttribute="trailing" secondItem="1wU-A6-Fef" secondAttribute="trailing" id="j6B-kN-8cF"/>
                                     <constraint firstAttribute="trailing" secondItem="gcK-0u-Njp" secondAttribute="trailing" constant="20" id="ndW-nW-6Jo"/>
                                     <constraint firstItem="gcK-0u-Njp" firstAttribute="top" secondItem="Cru-q3-hhO" secondAttribute="top" constant="30" id="u7y-Jy-nBC"/>
+                                    <constraint firstItem="iqA-py-pRK" firstAttribute="top" secondItem="gcK-0u-Njp" secondAttribute="bottom" constant="10" id="xZL-Wv-54p"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -200,7 +222,7 @@
                     <connections>
                         <outlet property="amountLabel" destination="EzM-3H-DPa" id="QYh-Mb-QP5"/>
                         <outlet property="bottomView" destination="G2V-2J-2bS" id="OGO-6s-Mfl"/>
-                        <outlet property="headerView" destination="4ku-2B-gE5" id="H2Y-6O-2Tf"/>
+                        <outlet property="previousView" destination="iqA-py-pRK" id="QNx-v1-ff1"/>
                         <outlet property="productLabel" destination="GdS-8P-EPF" id="KpU-xQ-EE3"/>
                         <outlet property="saleView" destination="1wU-A6-Fef" id="66J-sH-s23"/>
                         <outlet property="tableView" destination="eli-t8-bki" id="4XB-kx-f6x"/>

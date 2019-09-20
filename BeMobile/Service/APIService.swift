@@ -11,15 +11,14 @@ import RxSwift
 import Alamofire
 
 enum ApiUrls: String {
+    
     case rates = "rates"
     case transactions = "transactions"
     
     var getUrl: String {
-        
         return "http://quiet-stone-2094.herokuapp.com/\(self.rawValue)"
-
-        
     }
+    
 }
 
 struct APIService {
@@ -42,44 +41,21 @@ struct APIService {
                             
                             let transactions = try JSONDecoder()
                                 .decode([Transaction].self, from: data)
-                                //.compactMap { $0 }
-                            
-                            //let transactions = try JSONDecoder().decode(CargoList.self, from: data)
-                            
+    
                             for transaction in transactions {
                                 observer.onNext(transaction)
                             }
                             
                         } catch {
-                            /*do {
-                                let error = try JSONDecoder().decode(InnrouteError.self, from: data)
-                                observer.onError(error)
-                            } catch {
-                                let error = InnrouteError(code: "", message: "", type: "")
-                                observer.onError(error)
-                            }*/
-                            print("ERROR IN CATCH")
+                            observer.onError(error)
+                            
                         }
                         
                         observer.onCompleted()
                         
                     case .failure (let encodingError):
                         
-                        /*var innrouteError = InnrouteError(code: "", message: "", type: "")
-                        
-                        if let err = encodingError as? URLError, err.code == .notConnectedToInternet {
-                            
-                            innrouteError = InnrouteError(code: String(err.code.rawValue), message: "No Internet connection", type: "AFError")*/
                         observer.onError(encodingError)
-                            
-                        //} else {
-                            
-                            //innrouteError = InnrouteError(code: "0", message: "Unknown error", type: "CustomError")
-                            
-                        //}
-                        
-                        //observer.onError(innrouteError)
-                        
                         return observer.onCompleted()
                         
                     }
@@ -89,10 +65,6 @@ struct APIService {
             })
             
         })
-        
-        /*let transactions = try JSONDecoder()
-            .decode([FailableDecodable<Transaction>].self, from: json)
-            .compactMap { $0.base }*/
         
     }
     
@@ -119,8 +91,7 @@ struct APIService {
                             }
                             
                         } catch {
-                    
-                            print("ERROR IN CATCH")
+                            observer.onError(error)
                         }
                         
                         observer.onCompleted()
@@ -128,7 +99,6 @@ struct APIService {
                     case .failure (let encodingError):
                       
                         observer.onError(encodingError)
-                        
                         return observer.onCompleted()
                         
                     }

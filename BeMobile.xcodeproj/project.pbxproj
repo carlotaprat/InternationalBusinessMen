@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		053BBC2C2334D8AD00C4F568 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053BBC2B2334D8AD00C4F568 /* UIColorExtension.swift */; };
+		053BBC2F2334DDA500C4F568 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053BBC2E2334DDA500C4F568 /* UIAlertControllerExtension.swift */; };
+		053BBC332334E0A800C4F568 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 053BBC322334E0A800C4F568 /* Localizable.strings */; };
 		056E53852332440B00CD122F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056E53842332440B00CD122F /* AppDelegate.swift */; };
 		056E53872332440B00CD122F /* TradesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056E53862332440B00CD122F /* TradesViewController.swift */; };
 		056E538A2332440B00CD122F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 056E53882332440B00CD122F /* Main.storyboard */; };
@@ -25,6 +28,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		053BBC2B2334D8AD00C4F568 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		053BBC2E2334DDA500C4F568 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift; sourceTree = "<group>"; };
+		053BBC322334E0A800C4F568 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		056E53812332440B00CD122F /* BeMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		056E53842332440B00CD122F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		056E53862332440B00CD122F /* TradesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradesViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +63,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		053BBC2D2334DD0A00C4F568 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				056E53A12332556600CD122F /* TradesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		056E53782332440A00CD122F = {
 			isa = PBXGroup;
 			children = (
@@ -82,7 +96,7 @@
 				056E53882332440B00CD122F /* Main.storyboard */,
 				056E538D2332440D00CD122F /* LaunchScreen.storyboard */,
 				056E539A2332456000CD122F /* Supporting Files */,
-				056E53992332454B00CD122F /* Storyboards */,
+				053BBC322334E0A800C4F568 /* Localizable.strings */,
 				056E53982332454300CD122F /* Models */,
 				056E53972332453900CD122F /* View Controllers */,
 				056E53962332452500CD122F /* Service */,
@@ -101,9 +115,9 @@
 		056E53972332453900CD122F /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				053BBC2D2334DD0A00C4F568 /* ViewModel */,
 				056E53AE2332A89A00CD122F /* Cell */,
 				056E53862332440B00CD122F /* TradesViewController.swift */,
-				056E53A12332556600CD122F /* TradesViewModel.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -116,13 +130,6 @@
 				056E539F23324E6400CD122F /* Rate.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		056E53992332454B00CD122F /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		056E539A2332456000CD122F /* Supporting Files */ = {
@@ -147,6 +154,8 @@
 			isa = PBXGroup;
 			children = (
 				056E53AC23329BD000CD122F /* UIViewExtension.swift */,
+				053BBC2B2334D8AD00C4F568 /* UIColorExtension.swift */,
+				053BBC2E2334DDA500C4F568 /* UIAlertControllerExtension.swift */,
 				05BC53052333E11A00C2F984 /* DoubleExtension.swift */,
 			);
 			path = Extensions;
@@ -220,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				056E538F2332440D00CD122F /* LaunchScreen.storyboard in Resources */,
+				053BBC332334E0A800C4F568 /* Localizable.strings in Resources */,
 				056E538C2332440D00CD122F /* Assets.xcassets in Resources */,
 				056E538A2332440B00CD122F /* Main.storyboard in Resources */,
 			);
@@ -259,9 +269,11 @@
 				056E539C23324D3D00CD122F /* APIService.swift in Sources */,
 				056E539E23324E0900CD122F /* Transaction.swift in Sources */,
 				056E53A023324E6400CD122F /* Rate.swift in Sources */,
+				053BBC2F2334DDA500C4F568 /* UIAlertControllerExtension.swift in Sources */,
 				056E53AA2332599700CD122F /* Sale.swift in Sources */,
 				056E53B02332A8AC00CD122F /* TransactionCell.swift in Sources */,
 				056E53852332440B00CD122F /* AppDelegate.swift in Sources */,
+				053BBC2C2334D8AD00C4F568 /* UIColorExtension.swift in Sources */,
 				056E53A22332556600CD122F /* TradesViewModel.swift in Sources */,
 				056E53AD23329BD000CD122F /* UIViewExtension.swift in Sources */,
 			);

@@ -7,3 +7,10 @@
 //
 
 import Foundation
+import UIKit
+
+extension UIColor {
+    
+    static let DeepPurple = UIColor(red:0.16, green:0.06, blue:0.41, alpha:1.0)
+    
+}
