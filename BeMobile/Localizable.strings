@@ -1,0 +1,12 @@
+/* 
+  LocalizedStrings.strings
+  BeMobile
+
+  Created by Carlota Prat on 20/9/19.
+  Copyright © 2019 Carlota Prat. All rights reserved.
+*/
+
+"alert_title" = "Oops!";
+"alert_body" = "Something went wrong";
+"alert_done" = "Ok";
+"euro" = "EUR";
